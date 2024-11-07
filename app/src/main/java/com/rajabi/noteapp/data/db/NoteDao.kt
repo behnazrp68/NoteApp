@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface  NoteDao {
 
-    @Query("SELECT * FROM nots_tbl")
+    @Query("SELECT * FROM nots_tbl order by note_date desc")
     fun getNotes():Flow<List<Note>>
 
     @Query("SELECT * FROM nots_tbl WHERE id =:id")
